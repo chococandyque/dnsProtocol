@@ -17,7 +17,7 @@ void func(int new_socket)
 
    if( (he = gethostbyname(hostname)) == NULL )
    {
-      // if the get host by name failed
+      // get host by name failed
       herror("gethostbyname");
    }
 
@@ -25,7 +25,7 @@ void func(int new_socket)
 
    for(int i = 0;addr_list[i] != NULL; i++)
    {
-      // it will return the first one
+      // return the first one
       strcpy(ip_address,inet_ntoa(*addr_list[i]) );
    }
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
    int socket_desc, new_socket, c;
    struct sockaddr_in server , client;
 
-   // socket creation and verification
+   // for a creation and verification of a socket
    socket_desc = socket(AF_INET,SOCK_STREAM,0);
    if(socket_desc == -1)
    {
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
    else
       printf("Socket successfully binded...\n");
 
-   //the server is ready to listen
+   // server is ready to listen
    listen(socket_desc,3);
 
    // accept and incoming connection
